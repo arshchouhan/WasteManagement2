@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html class="whatinput-types-initial whatinput-types-mouse" lang="en" dir="ltr" data-whatinput="mouse" data-whatintent="mouse"><head>
+    < charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <metmetaa name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> Bill Pay</title>
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon">
+    
+
+    <!-- Foundation CSS Sources -->
+    <link rel="stylesheet" href="css/vendor/foundation/foundation-6.3.1.min.css">
+    <link rel="stylesheet" href="css/vendor/foundation/plugins/motion-ui.css">
+    
+    <!-- jQueryUI CSS Sources -->
+    <link rel="stylesheet" href="css/themes/south-street/jquery-ui-1.10.3.custom.min.css">
+    <link rel="stylesheet" href="css/themes/south-street/jquery-ui-addendum.css">
+    <link rel="stylesheet" href="css/themes/south-street/themed-foundation.css">
+    
+    <!-- Soft-Pak Custom CSS -->
+    <link rel="stylesheet" href="css/softpak-custom.css">
+    
+    <!--[if lt IE 8]>
+        <div class="unsupported-browser">
+            <div class="container clearfix">
+                <h5>Please note that Web-Pak no longer supports Internet Explorer versions 7 or earlier.</h5>
+                <p>We recommend upgrading to the latest <a href="https://ie.microsoft.com/">Internet Explorer</a>, <a href="https://chrome.google.com">Google Chrome</a>, or <a href="https://mozilla.org/firefox/">Firefox</a>.</p>
+                <p>If you are using IE 9 or later, make sure you <a href="http://windows.microsoft.com/en-US/windows7/webpages-look-incorrect-in-Internet-Explorer">turn off "Compatibility View"</a>.</p>
+            </div>
+        </div>
+        <![endif]-->     
+<meta class="foundation-mq"></head>
+<body id="divBody" class="init-hidden" style="display: block;">
+    <div id="divVars">
+        <!-- Variables -->
+        <input type="hidden" id="animatePage" name="animatePage" value="true">
+        <input type="hidden" id="helpURL" value="faq.jsp">
+        <input type="hidden" id="pickupURL" value="">
+        <input type="hidden" id="uuid" name="uuid" value="null">
+        <input type="hidden" id="puid" name="puid" value="null">
+    </div>
+    
+    <div id="divMainPage">
+        <h1 class="init-hidden">Online Bill Pay</h1>
+        <h2 class="init-hidden">Unauthenticated</h2>
+        <h3 class="init-hidden">Sign-In</h3>
+        <!-- Banner Logo -->
+        <div id="rowBanner" class="row column">
+            <img style="height:200px; width:200px;" src="logo (3).jpg">
+        </div>
+    
+        <!-- Welcome Message -->
+        <div id="rowWelcome" class="row column init-hidden" style="display: block;">
+            <hr>
+            
+            <h4 style="margin: 0;" class="text-center">Welcome to Valley Vista Services Secure Online Bill Pay.</h4>
+            
+            <hr>
+        </div>
+    
+        <div id="rowSignin" class="row">
+            <!-- Signin Box -->
+            <div id="colSigninArea" class="small-12 medium-7 medium-push-5 large-4 large-push-4 columns init-hidden" style="display: block;">
+                <div class="row column">
+                    <p class="text-center"><span class="bold italic">Please enter your e-mail address and password to sign into your account.</span></p>
+                    
+                    <div class="row column">
+                        <form id="frmSignin" data-abide="634lsw-abide" novalidate="">
+                            <label for="txtSigninEmail" class="bold">Enter E-Mail:</label>
+                            <input type="email" id="txtSigninEmail" placeholder="E-Mail Address" autofocus="" required="">
+                            
+                            <label for="txtPassword" class="bold">Enter Password (Case Sensitive):</label>
+                            <input type="password" id="txtPassword" autocomplete="off" placeholder="Password" required="">
+                            
+                            <!-- Registration Success/Error/Failure Messages -->
+                            <div id="rtnSignin" class="alert row callout hide">
+                                <p class="text-center"><span id="signinResultHeading" class="bold"><!-- DOM Injection --></span></p>
+                                
+                                <div id="msgSignin">
+                                    <!-- DOM Injection Placeholder -->
+                                </div>
+                            </div>
+                            
+                            <br class="show-for-small-only">
+                            
+                            <input type="submit" id="btnSignin" class="expanded button ui-button ui-widget ui-state-default ui-corner-all" value="Sign In">
+                            
+                            <br>
+                            
+                            
+                             
+                           
+                            
+                            
+                                <br>
+                                
+                                <p class="text-center bold"><a href="#" id="lnkFAQ">Need Help? View our FAQ!</a></p>
+                             
+                            
+                            <br class="show-for-small-only">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WebPak Registration Box -->             
+            <div id="colRegistration" class="small-12 medium-5 medium-pull-7 large-4 large-pull-4 columns init-hidden" style="display: block;">
+                <div class="row column callout">
+                    <div class="show-for-large column">
+                        <p><img src="img/security.png" alt="" class="center"></p>
+                    </div>
+                    
+                    <p class="text-center"><span class="bold">Are you a new user?</span></p>
+                    <p class="text-center">Click on the button below to register now!  </p><p class="text-center"><span class="italic">Please have your customer number and access code ready.</span></p>
+                    <p class="text-center"><input type="button" id="btnRegister" data-open="dlgRegister" class="button ui-button ui-widget ui-state-default ui-corner-all" value="Register Now" aria-controls="dlgRegister" aria-haspopup="true" tabindex="0"></p>
+                </div>
+            </div>
+            
+            <!-- Reset Password Box -->
+            <div id="colResetPassword" class="small-12 medium-8 medium-push-2 large-4 large-pull-0 columns end init-hidden" style="display: block;">
+                <div class="row column callout">
+                    <p class="text-center"><span class="bold">Forgot your password?</span></p>
+                    <p class="text-center">Click on the button below to reset it. </p><p class="text-center"><span class="italic">You will be asked to provide the e-mail address you use to log in.</span></p>
+                    <p class="text-center"><input type="button" id="btnPasswordReset" data-open="dlgPasswordReset" class="button ui-button ui-widget ui-state-default ui-corner-all" value="Reset Password" aria-controls="dlgPasswordReset" aria-haspopup="true" tabindex="0"></p>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <div id="divRevealedPages">
+        <!-- New Password Form -->
+        
+        
+        <!-- Registration Form -->
+          
+        
+        <!-- Reset Password Form -->
+        
+        
+        <!-- Success Dialog -->
+        
+    </div>
+    
+    <div id="divJavaScript">
+        <!-- Load Vendor JavaScript Sources -->
+        <script type="text/javascript" src="js/vendor/jquery/jquery-2.2.4.min.js?ver=8.0.03"></script>
+        <script type="text/javascript" src="js/vendor/jquery/plugins/jquery.blockUI.js?ver=8.0.03"></script>
+        <script type="text/javascript" src="js/vendor/jquery/plugins/jquery.i18n.properties-1.0.9.min.js?ver=8.0.03"></script>
+        <script type="text/javascript" src="js/vendor/jquery/plugins/jquery.mask.min.js?ver=8.0.03"></script>
+        <script type="text/javascript" src="js/vendor/foundation/foundation-6.3.1.min.js?ver=8.0.03"></script>
+        <script type="text/javascript" src="js/vendor/foundation/plugins/motion-ui.js?ver=8.0.03"></script>
+        <script type="text/javascript" src="js/vendor/foundation/plugins/what-input-4.0.4.js?ver=8.0.03"></script>
+        
+        <!-- Load Custom JavaScript Sources -->
+        <script type="text/javascript" src="js/signin/signin.document.js?ver=8.0.03"></script>
+        <script type="text/javascript" src="js/signin/signin.listeners.js?ver=8.0.03"></script>
+        <script type="text/javascript" src="js/signin/signin.user.js?ver=8.0.03"></script>
+        <script type="text/javascript" src="js/shared/support.js?ver=8.0.03"></script>
+    </div>
+
+<footer>
+    <div id="divFooterData" class="init-hidden" style="display: block;">
+        <hr>
+        
+        <div id="divVersion">
+            <p class="text-center"><span style="font-size:0.75em;">Soft-Pak © 2016 All Rights Reserved&nbsp;(8.0.03)</span></p>
+        </div>
+        
+        
+    </div>       
+</footer>
+<div class="reveal-overlay"><div id="dlgNewPassword" class="reveal" data-reveal="4dj382-reveal" data-close-on-click="false" data-close-on-esc="false" data-animation-in="scale-in-up" data-animation-out="scale-out-down" role="dialog" aria-hidden="true" data-yeti-box="dlgNewPassword" data-resize="dlgNewPassword" data-events="resize" style="top: 87px;">
+            <div class="show-for-small-only">
+                <p><img style="height:200px; width:200px;" src="logo (3).jpg" alt="Link to home page" class="center"></p>
+            </div>
+            
+            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix text-center">
+                <span class="ui-dialog-title">Set New Password</span>
+            </div>
+            
+            <br>
+            
+            <form id="frmNewPassword" data-abide="pll0cx-abide" novalidate="">
+                <div id="divNewPasswordContent" class="callout">
+                    <p class="text-center">You have requested to reset your password.</p><p class="text-center">Please enter your new password.  You will have to confirm your new password.</p><p class="text-center">Password is case-sensitive.</p>
+                    
+                    <!-- New Password -->
+                    <div class="row column">
+                        <div class="row column">
+                            <label for="txtNewPassword"><span class="bold">Password</span><span class="bold">:</span></label>
+                        </div>
+                        
+                        <div class="small-12 medium-12 large-12 columns">
+                            <input type="password" id="txtNewPassword" required="" pattern="webpak-password">
+                            <span class="form-error error-red">Your Password Must Be 3-10 Characters Long</span>
+                        </div>
+                    </div>
+                        
+                    <!-- New Password Confirmation -->
+                    <div class="row column">
+                        <div class="row column">
+                            <label for="txtNewPasswordConfirm"><span class="bold">Confirm Password</span><span class="bold">:</span></label>
+                        </div>
+                        
+                        <div class="small-12 medium-12 large-12 columns">
+                            <input type="password" id="txtNewPasswordConfirm" required="" data-equalto="txtNewPassword">
+                            <span class="form-error error-red">Passwords Do Not Match.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- New Password iSeries Messages -->
+                <div id="rtnNewPassword" class="row callout hide">
+                    <p class="text-center"><span id="newPasswordResultHeading" class="bold"><!-- DOM Injection --></span></p>
+                    
+                    <div id="msgNewPassword">
+                        <!-- DOM Injection Placeholder -->
+                    </div>
+                </div>
+                
+                <!-- New Password Buttons -->
+                <div class="row">
+                    <div class="small-12 medium-4 medium-push-8 large-4 large-push-8 columns">
+                        <input type="submit" id="btnNewPasswordSubmit" class="expanded button ui-button ui-widget ui-state-default ui-corner-all" value="Submit">
+                    </div>
+                    
+                    <div class="small-12 medium-4 medium-pull-8 large-4 large-pull-8 columns">
+                        <input type="button" id="btnNewPasswordClose" class="expanded button ui-button ui-widget ui-state-default ui-corner-all" value="Close">
+                    </div>
+                </div>
+            </form>
+        </div></div><div class="reveal-overlay"><div id="dlgRegister" class="large reveal" data-reveal="nak4hf-reveal" data-close-on-click="false" data-close-on-esc="true" data-animation-in="fade-in" data-animation-out="fade-out" role="dialog" aria-hidden="true" data-yeti-box="dlgRegister" data-resize="dlgRegister" data-events="resize" style="top: 87px;">
+            <div class="show-for-small-only">
+                <p><img src="images/banner" alt="Link to home page" class="center"></p>
+            </div>
+            
+            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix text-center">
+                <span class="ui-dialog-title">Online Bill Pay Registration</span>
+            </div>
+            
+            <br>
+            
+            <p class="text-center"><span class="bold">Please enter the customer number and access code found on your statement or invoice.</span></p>
+            
+            <form id="frmRegistration" data-abide="e43qwl-abide" novalidate="">
+                <div class="row column">
+                    <label for="txtCompanyNumber"><span class="bold">Customer Number</span><span class="bold">:</span></label>
+                </div>
+                
+                <!-- Registration Customer Number Input -->
+                <div class="row small-collapse medium-collapse large-collapse">
+                    <div class="small-2 small-push-2 medium-2 medium-push-2 large-2 large-push-2 columns">
+                        <input type="text" id="txtCompanyNumber" class="input-company-number" maxlength="2" required="" autocomplete="off">
+                        <span class="form-error error-red">Required</span>
+                    </div>
+                    
+                    <div class="small-1 small-push-2 medium-1 medium-push-2 large-1 large-push-2 columns">
+                        <p class="text-center"><span class="bold">-</span></p>
+                    </div>
+                    
+                    <label for="txtAccountNumber" class="init-hidden">Account Number</label>
+                    <div class="small-3 small-push-2 medium-3 medium-push-2 large-3 large-push-2 columns">
+                        <input type="tel" id="txtAccountNumber" class="input-account-number" maxlength="7" required="" autocomplete="off">
+                        <span class="form-error error-red">Required</span>
+                    </div>
+                    
+                    <div class="small-1 small-push-2 medium-1 medium-push-2 large-1 large-push-2 columns">
+                        <p class="text-center"><span class="bold">-</span></p>
+                    </div>
+                    
+                    <label for="txtCheckDigit" class="init-hidden">Check Digit</label>
+                    <div class="small-1 small-push-2 medium-1 medium-push-2 large-1 large-push-2 columns end">
+                        <input type="tel" id="txtCheckDigit" class="input-check-digit" maxlength="1" autocomplete="off">
+                    </div>
+                </div>
+                
+                <!-- Customer Number Instructions -->
+                <div id="divCustomerNumberInstructions" class="row">
+                    <div class="small-12 small-push-0 medium-10 medium-push-1 large-10 large-push-1 columns callout primary end">
+                        <p class="text-center"><span class="bold">Customer Number Entry Instructions</span></p>
+                        <p class="text-center"><span>If your account number appears on your bill like: <span class="bold">01-125</span></span></p>
+                        
+                        <!-- Example: No Check Digit -->
+                        <div class="row small-collapse medium-collapse large-collapse">
+                            <label for="txtCustNumEx1" class="init-hidden">Customer Number Example 1</label>
+                            <div class="small-2 small-push-2 medium-2 medium-push-2 large-2 large-push-2 columns">
+                                <input id="txtCustNumEx1" type="text" value="01" disabled="">
+                            </div>
+                            
+                            <div class="small-1 small-push-2 medium-1 medium-push-2 large-1 large-push-2 columns">
+                                <p class="text-center"><span class="bold">-</span></p>
+                            </div>
+                            
+                            <label for="txtActNumEx1" class="init-hidden">Account Number Example 1</label>
+                            <div class="small-3 small-push-2 medium-3 medium-push-2 large-3 large-push-2 columns">
+                                <input id="txtActNumEx1" type="text" value="125" disabled="">
+                            </div>
+                            
+                            <div class="small-1 small-push-2 medium-1 medium-push-2 large-1 large-push-2 columns">
+                                <p class="text-center"><span class="bold">-</span></p>
+                            </div>
+                            
+                            <label for="txtChkDigitEx1" class="init-hidden">Check Digit Example 1</label>
+                            <div class="small-1 small-push-2 medium-1 medium-push-2 large-1 large-push-2 columns end">
+                                <input id="txtChkDigitEx1" type="text" disabled="">
+                            </div>
+                        </div>
+                        
+                        <p class="text-center"><span>If your account number appears on your bill like: <span class="bold">01-125-4</span> or <span class="bold">01-125 4</span></span></p>
+                        
+                        <!-- Example: Check Digit -->
+                        <div class="row small-collapse medium-collapse large-collapse">
+                        <label for="txtCustNumEx2" class="init-hidden">Customer Number Example 2</label>
+                            <div class="small-2 small-push-2 medium-2 medium-push-2 large-2 large-push-2 columns">
+                                <input id="txtCustNumEx2" type="text" value="01" disabled="">
+                            </div>
+                            
+                            <div class="small-1 small-push-2 medium-1 medium-push-2 large-1 large-push-2 columns">
+                                <p class="text-center"><span class="bold">-</span></p>
+                            </div>
+                            
+                            <label for="txtActNumEx2" class="init-hidden">Account Number Example 2</label>
+                            <div class="small-3 small-push-2 medium-3 medium-push-2 large-3 large-push-2 columns">
+                                <input id="txtActNumEx2" type="text" value="125" disabled="">
+                            </div>
+                            
+                            <div class="small-1 small-push-2 medium-1 medium-push-2 large-1 large-push-2 columns">
+                                <p class="text-center"><span class="bold">-</span></p>
+                            </div>
+                            
+                            <label for="txtChkDigitEx2" class="init-hidden">Check Digit Example 2</label>
+                            <div class="small-1 small-push-2 medium-1 medium-push-2 large-1 large-push-2 columns end">
+                                <input id="txtChkDigitEx2" type="text" value="4" disabled="">
+                            </div>
+                        </div>
+                    </div>                        
+                </div>
+                
+                <!-- Registration Access Code -->
+                <div class="row column">
+                    <div class="row column">
+                        <label for="txtAccessCode"><span class="bold">Access Code</span><span class="bold">:</span></label>
+                    </div>
+                    <div class="row column">
+                        <input type="tel" id="txtAccessCode" class="input-access-code" pattern="number" required="" maxlength="7" autocomplete="off">
+                        <span class="form-error error-red">Access Code Is Required; Numbers Only.</span>
+                    </div>
+                </div>
+                
+                <!-- Registration E-Mail Address -->
+                <div class="row column">
+                    <div class="row column">
+                        <label for="txtRegisterEmail"><span class="bold">E-Mail Address</span><span class="bold">:</span></label>
+                    </div>
+                    
+                    <div class="row column">
+                        <input type="email" id="txtRegisterEmail" required="" pattern="email">
+                        <span class="form-error error-red">E-Mail Address Is Required.</span>
+                    </div>
+                </div>
+                
+                <!-- Registration E-Mail Address Confirmation -->
+                <div class="row column">
+                    <div class="row column">
+                        <label for="txtRegisterEmailConfirm"><span class="bold">Confirm E-Mail Address</span><span class="bold">:</span></label>
+                    </div>
+                    
+                    <div class="row column">
+                        <input type="email" id="txtRegisterEmailConfirm" required="" data-equalto="txtRegisterEmail">
+                        <span class="form-error error-red">E-Mail Address Fields Don't Match.</span>
+                    </div>
+                </div>
+                
+                <!-- Registration Password -->
+                <div class="row column">
+                    <div class="row column">
+                        <label for="txtRegisterPassword"><span class="bold">Password</span><span class="bold">:</span></label>
+                    </div>
+                    
+                    <div class="row column">
+                        <input type="password" id="txtRegisterPassword" required="" pattern="webpak-password">
+                        <span class="form-error error-red">Password Must Be 3-10 Characters Long</span>
+                    </div>
+                </div>
+                
+                <!-- Registration Password Confirmation -->
+                <div class="row column">
+                    <div class="row column">
+                        <label for="txtRegisterPasswordConfirm"><span class="bold">Confirm Password</span><span class="bold">:</span></label>
+                    </div>
+                    
+                    <div class="row column">
+                        <input type="password" id="txtRegisterPasswordConfirm" data-equalto="txtRegisterPassword">
+                        <span class="form-error error-red">Passwords Do Not Match.</span>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <!-- Registration Success/Error/Failure Messages -->
+                <div id="rtnRegistration" class="alert row callout hide">
+                    <p class="text-center"><span id="registrationResultHeading" class="bold"><!-- DOM Injection --></span></p>
+                    
+                    <div id="msgRegistration">
+                        <!-- DOM Injection Placeholder -->
+                    </div>
+                </div>
+                
+                <!-- Registration Buttons -->
+                <div class="row">
+                    <div class="small-12 medium-3 medium-push-9 large-3 large-push-9 columns">
+                        <input type="submit" id="btnRegistrationSubmit" class="expanded button ui-button ui-widget ui-state-default ui-corner-all" value="Register Now">
+                    </div>
+                    
+                    <div class="small-12 medium-3 medium-pull-9 large-3 large-pull-9 columns">
+                        <input type="button" id="btnRegistrationClose" class="expanded button ui-button ui-widget ui-state-default ui-corner-all" value="Close">
+                    </div>
+                </div>
+            </form>
+        </div></div><div class="reveal-overlay"><div id="dlgPasswordReset" class="reveal" data-reveal="k2l3ny-reveal" data-close-on-click="false" data-close-on-esc="true" data-animation-in="fade-in" data-animation-out="fade-out" role="dialog" aria-hidden="true" data-yeti-box="dlgPasswordReset" data-resize="dlgPasswordReset" data-events="resize" style="top: 87px;">
+            <div class="show-for-small-only">
+                <p><img src="images/banner" alt="Link to home page" class="center"></p>
+            </div>
+            
+            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix text-center">
+                <span class="ui-dialog-title">Reset Online Bill Pay Password</span>
+            </div>
+            
+            <br>
+            
+            <form id="frmResetPassword" data-abide="twx3yx-abide" novalidate="">
+                <div id="divResetPasswordContent" class="callout">
+                    <p class="text-center">Enter your e-mail address in the text box and then click the <span class="bold">Reset</span> button below. </p><p class="text-center">An e-mail will be sent to your address with further instructions.</p><p></p>
+                
+                    <!-- Reset Password E-Mail -->
+                    <div class="row column">
+                        <label for="txtResetPasswordEmail"><span class="bold">E-Mail Address</span><span class="bold">:</span></label>
+                    </div>
+                    
+                    <div class="row column">
+                        <input type="email" id="txtResetPasswordEmail" placeholder="E-Mail Address" required="" pattern="email">
+                        <span class="form-error error-red">Please provide a valid e-mail address.</span>
+                    </div>
+                </div>
+                
+                <!-- Reset Password iSeries Messages -->
+                <div id="rtnResetPassword" class="row callout init-hidden">
+                    <p class="text-center"><span id="resetPasswordResultHeading" class="bold"><!-- DOM Injection --></span></p>
+                    
+                    <div id="msgResetPassword">
+                        <!-- DOM Injection Placeholder -->
+                    </div>
+                </div>
+                
+                <!-- Reset Password Buttons -->
+                <div class="row">
+                    <div class="small-12 medium-4 medium-push-8 large-4 large-push-8 columns">
+                        <input type="submit" id="btnResetPasswordSubmit" class="expanded button ui-button ui-widget ui-state-default ui-corner-all" value="Reset">
+                    </div>
+                    
+                    <div class="small-12 medium-4 medium-pull-8 large-4 large-pull-8 columns">
+                        <input type="button" id="btnResetPasswordClose" class="expanded button ui-button ui-widget ui-state-default ui-corner-all" value="Close">
+                    </div>
+                </div>
+            </form>
+        </div></div><div class="reveal-overlay"><div id="dlgSuccess" class="reveal" data-reveal="un3k7y-reveal" data-close-on-click="false" data-close-on-esc="true" data-animation-in="fade-in" data-animation-out="fade-out" role="dialog" aria-hidden="true" data-yeti-box="dlgSuccess" data-resize="dlgSuccess" data-events="resize" style="top: 87px;">
+            <div class="show-for-small-only">
+                <p><img src="images/banner" alt="Link to home page" class="center"></p>
+            </div>
+            
+            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix text-center">
+                <span class="ui-dialog-title">???success-dialog.p.title???</span>
+            </div>
+            
+            <br>
+            
+            <div id="divSuccessMessage" class="row success callout">
+                <p class="text-center"><span id="successTitle" class="bold"><!-- DOM Injection --></span></p>
+                
+                <div id="msgSuccess">
+                    <!-- DOM Injection Placeholder -->
+                </div>
+            </div>
+            
+            <!-- Success Dialog Buttons -->
+            <div class="row">
+                <div class="small-12 medium-3 medium-push-9 large-3 large-push-9 columns">
+                    <button id="btnSuccessClose" class="expanded button ui-button ui-widget ui-state-default ui-corner-all">
+                        <span class="ui-button-text">???generic.close???</span>
+                    </button>
+                </div>
+            </div>
+        </div></div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
